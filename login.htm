@@ -16,40 +16,48 @@
     </style>
 </head>
 
-<body>
+<body class="">
     <div class="">
-        <img src="assets/Image (1).png" alt="background image " class="w-full ">
+        <img src="assets/Image (1).png" alt="background image " class="block md:hidden">
 
 
-    </div>
-    <div class="flex flex-col absolute top-16 left-4 gap-6 w-full items-start top-0 ">
-        <img src="assets/Logo (1).png" alt="logo">
-        <h1 class="text-[#030F09] text-[24px] font-bold">Welcome Back</h1>
     </div>
     <div>
-        <p class="text-[14px] text-[#606060] container mt-2 ">Please login to continue.</p>
+        <img src="assets/Image (2).png" alt="bggggg" class="hidden md:block w-full">
     </div>
-    <form action="submit" class="container my-6 ">
-        <label for="email" class="text-[#A8A8A8] text-[14px]">Email address</label> <br>
-        <input type="text" placeholder="user@email.com"
-            class="text-[#030F09] border-b-1 border-b-[#CCCCCC] placeholder:text-[#030F09] my-4 w-full">
-        <div class="flex flex-row  gap-25 mt-2">
-            <label for="password" class="text-[#A8A8A8] text-[14px]">password</label>
-            <button class="absolute right-0">forgot password?</button>
+    <article    class="md:absolute md:top-50 md:left-50  md:grid-flow-col md:justify-items-center">
+        <div class="flex flex-col absolute md:static top-16 md:-mt-20 md:mb-4  left-4 gap-6 md:gap-30 w-full items-start md:items-center top-0 md:top-none ">
+            <img src="assets/Logo (1).png" alt="logo">
+            <h1 class="text-[#030F09] text-[24px] font-bold">Welcome Back</h1>
         </div>
-        <input type="password" placeholder=".........."
-            class="text-[#030F09] placeholder:font-bold placeholder:text-[20px] border-b-1 border-b-[#CCCCCC] my-4 w-full placeholder:text-[#030F09]"><br>
+        
+       <div class="md:border-0 md:rounded-2xl ">
+         <form action="submit" class="container   md:bg-white md:py-10    ">
+            
+            <label   class="text-[14px] text- text-[#606060]  mt-8 ">Please login to continue.</label><br>
+      
+            <label for="email" class="text-[#A8A8A8] text-[14px]">Email address</label> <br>
+            <input type="text" placeholder="user@email.com"
+                class="text-[#030F09] border-b-1 border-b-[#CCCCCC] placeholder:text-[#030F09] my-4 w-full">
+            <div class="flex flex-row  gap-25 mt-2">
+                <label for="password" class="text-[#A8A8A8] text-[14px]">password</label>
+                <button class="absolute right-0">forgot password?</button>
+            </div>
+            <input type="password" placeholder=".........."
+                class="text-[#030F09] placeholder:font-bold placeholder:text-[20px] border-b-1 border-b-[#CCCCCC] my-4 w-full placeholder:text-[#030F09]"><br>
 
-        <div class=" justify-center items-center text-center">
-            <button class="border-0 py-1 px-30 rounded-md bg-[#30BE76] text-[#FFFFFF] w-auto ">login</button>
+            <div class=" justify-center items-center text-center">
+                <button class="border-0 py-1 px-30 rounded-md bg-[#30BE76] text-[#FFFFFF] w-auto ">login</button>
 
-        </div><br><br>
+            </div><br><br>
 
-        <div class="text-center">
-            <p class="text-[#A8A8A8] text-[14px]">New to Sratch</p>
-            <a href="#" class="text-[#30BE76]"> Create Acount Here</a>
-        </div>
-    </form>
+            <div class="text-center">
+                <p class="text-[#A8A8A8] text-[14px]">New to Sratch</p>
+                <a href="#" class="text-[#30BE76]"> Create Acount Here</a>
+            </div>
+        </form>
+       </div>
+    </article>
 </body>
 
 </html>
