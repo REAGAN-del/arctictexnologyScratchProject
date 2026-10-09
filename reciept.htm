@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <style type="text/tailwindcss">
+        @layer component {
+        .container {
+          @apply w-full mx-auto px-4 sm:px-10 md:px-5 lg:px-8;
+        }
+      }
+    </style>
+
+</head>
+
+<body>
+    <main>
+        <header
+            class="fixed top-0 left-0 w-full bg-white z-50 border-b border-[#E5E5E5] lg:bg-white/90 lg:backdrop-blur-sm">
+            <div class="container py-3 flex items-center justify-between">
+                <div class="flex items-center">
+                    <img src="assets/Logo (1).png" alt="Scratch Logo" class="h-6 w-auto object-contain">
+                </div>
+
+                <div class="hidden lg:flex items-center gap-2 border-b border-[#A8A8A8] pb-1 w-72">
+                    <img src="assets/Nav 1.png" alt="Search icon" class="w-4 h-4 object-contain">
+                    <input type="text" placeholder="Search recipe, Profile, ingredients"
+                        class="text-xs text-gray-500 bg-transparent outline-none w-full placeholder-gray-400">
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <button aria-label="Notifications" class="focus:outline-none hover:opacity-80 transition-opacity">
+                        <img src="assets/Notifications.png" alt="Notifications" class="w-5 h-5 object-contain">
+                    </button>
+                    <button aria-label="Messages" class="focus:outline-none hover:opacity-80 transition-opacity">
+                        <img src="assets/Messages.png" alt="Messages" class="w-5 h-5 object-contain">
+                    </button>
+                    <img src="assets/Avatar.png" alt="Avatar"
+                        class="hidden md:block w-8 h-8 rounded-full object-cover cursor-pointer">
+                </div>
+            </div>
+
+
+            <div class="px-4 flex md:hidden items-center gap-3 pb-2 pt-1 border-t border-gray-100">
+                <img src="assets/Avatar.png" alt="Yang Tonghyun" class="w-8 h-8 rounded-full object-cover">
+                <div>
+                    <h4 class="text-xs font-semibold text-[#030F09]">Yang Tonghyun</h4>
+                    <p class="text-[11px] text-[#767676]">2h ago</p>
+                </div>
+            </div>
+        </header>
+
+
+        <section class=" w-full h-[255px]
+           lg:bg-[url('assets/Background.png')] lg:bg-full lg:bg-cover lg:bg-no-repeat
+           px-4 sm:px-6 lg:px-8 pt-28 lg:flex lg:gap-12 lg:items-start">
+           <div class="container flex">
+            <!-- User profile info -->
+            <article class="  lg:w-1/4 lg:shrink-0">
+                <div class="hidden lg:block space-y-6 sticky top-24">
+
+                    <div
+                        class="p-4 bg-white flex flex-col justify-content rounded-lg shadow-sm border border-gray-100 lg:px-4">
+                        <div class="flex items-center gap-3 pb-4 border-b border-[#E5E5E5]">
+                            <img src="assets/Avatar.png" alt="Nick Evans" class="w-10 h-10 rounded-full object-cover">
+                            <div>
+                                <p class="text-xs font-bold text-[#030F09]">Nick Evans</p>
+                                <p class="text-[10px] text-gray-500">Photo Master</p>
+                                <p class="text-[10px] text-gray-400">23k likes</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center text-center text-[10px] mt-4 px-2">
+                            <div>
+                                <p class="font-bold text-xs text-[#030F09]">20</p>
+                                <p class="text-gray-500">Recipes</p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-xs text-[#030F09]">75</p>
+                                <p class="text-gray-500">Served</p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-xs text-[#030F09]">248</p>
+                                <p class="text-gray-500">Following</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div
+                        class="p-4 bg-white rounded-lg shadow-sm border border-gray-100 text-[#606060] text-xs space-y-2.5">
+                        <p class="text-[#030F09] font-bold mb-3">Top 5 Recipe today</p>
+                        <p class="hover:text-[#30BE76] cursor-pointer transition-colors">Tea-Smoked Creamy Chicken</p>
+                        <p class="hover:text-[#30BE76] cursor-pointer transition-colors">Pickled Savory Tortilla</p>
+                        <p class="hover:text-[#30BE76] cursor-pointer transition-colors">Stuffed Basil & Mint Salmon</p>
+                        <p class="hover:text-[#30BE76] cursor-pointer transition-colors">Strawberry Jelly</p>
+                        <p class="hover:text-[#30BE76] cursor-pointer transition-colors">Cinnamon and Lime Toffee</p>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- Main Container -->
+            <article class="lg:w-3/4 lg:mt-0 pl-4">
+                <div class="flex flex-col gap-2">
+                    <div class="lg:hidden md:flex md:flex-row md:justify-between">
+                        <a href="feed.htm" class="text-[#767676] text-[12px] capitalize">
+                            &lt; back to my profile</a>
+                        <a href="create-recipe.htm" class="hidden md:block text-[16px] text-[#30BE76] font-semibold"><span
+                                class="text-[24px]">+</span> Add New</a>
+                    </div>
+                    <div class="flex flex-row justify-between items-center">
+                        <h1 class="text-[#030F09] text-[24px] font-bold md:mt-4">My Recipes</h1>
+                        <a href="create-recipe.htm"
+                            class="block md:hidden lg:block lg:bg-white lg:text-[#30BE76] lg:rounded-2xl lg:p-2 lg:shadow-md text-[16px] text-[#30BE76] font-semibold"><span
+                                class="text-[24px]">+</span> Add New
+                            </a>
+                        <div
+                            class="hidden lg:hidden md:block mt-2 flex flex-row justify-between md:flex md:flex-row md:justify-between md:justify-center md:gap-20 border bg-white/80 shadow-xl rounded-md p-4">
+                            <h1 class=" text-[#030F09] text-[16px]">western (5)</h1>
+                            <img src="assets/icon-arrow down.png" alt="">
+                        </div>
+                    </div>
+                    <div
+                        class="block md:hidden mt-2 flex flex-row justify-between lg:items-right border bg-white/80 shadow-xl rounded-md p-4">
+                        <h1 class="text-[#030F09] text-[16px]">western (5)</h1>
+                        <img src="assets/icon-arrow down.png" alt="">
+                    </div>
+                </div>
+                <div>
+
+
+
+                    <div x-data="{
+        atStart: true,
+        atEnd: false,
+        step() {
+            const s = $refs.slider;
+            const gap = parseFloat(getComputedStyle(s).columnGap) || 0;
+            return s.firstElementChild.offsetWidth + gap;   // one card + the gap
+        },
+        next() { $refs.slider.scrollBy({ left:  this.step(), behavior: 'smooth' }) },
+        prev() { $refs.slider.scrollBy({ left: -this.step(), behavior: 'smooth' }) },
+        update() {
+            const s = $refs.slider;
+            this.atStart = s.scrollLeft <= 1;
+            this.atEnd   = s.scrollLeft + s.clientWidth >= s.scrollWidth - 1;
+        }
+    }" x-init="update()" @resize.window="update()" class="relative hidden lg:block">
+
+                        <button type="button" @click="prev()" x-show="!atStart" x-transition.opacity
+                            aria-label="Previous" class="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/80 shadow-md
+                   hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#30BE76]">
+
+                        </button>
+
+
+                        <button type="button" @click="next()" x-show="!atEnd" x-transition.opacity aria-label="Next"
+                            class="absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/80 shadow-md
+                   hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#30BE76]">
+                            <img src="assets/Next.png" alt="" class="h-8 w-10 rounded-lg">
+                        </button>
+
+
+                        <div x-ref="slider" @scroll.passive="update()" class="my-4 flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2
+                [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+
+                            <div class="group shrink-0 snap-start flex flex-col gap-2 cursor-pointer">
+                                <div
+                                    class="overflow-hidden rounded-lg border-2 border-transparent transition group-hover:border-[#30BE76]">
+                                    <img src="assets/Image (11).png" alt="" class="w-40">
+                                </div>
+                                <p class="text-center">western (8)</p>
+                            </div>
+
+                            <div class="group shrink-0 snap-start flex flex-col gap-2 cursor-pointer">
+                                <div
+                                    class="overflow-hidden rounded-lg border-2 border-transparent transition group-hover:border-[#30BE76]">
+                                    <img src="assets/Image (11).png" alt="" class="w-40">
+                                </div>
+                                <p class="text-center">western (8)</p>
+                            </div>
+
+                            <div class="group shrink-0 snap-start flex flex-col gap-2 cursor-pointer">
+                                <div
+                                    class="overflow-hidden rounded-lg border-2 border-transparent transition group-hover:border-[#30BE76]">
+                                    <img src="assets/Image (11).png" alt="" class="w-40">
+                                </div>
+                                <p class="text-center">western (8)</p>
+                            </div>
+
+                            <div class="group shrink-0 snap-start flex flex-col gap-2 cursor-pointer">
+                                <div
+                                    class="overflow-hidden rounded-lg border-2 border-transparent transition group-hover:border-[#30BE76]">
+                                    <img src="assets/Image (11).png" alt="" class="w-40">
+                                </div>
+                                <p class="text-center">western (8)</p>
+                            </div>
+
+                            <div class="group shrink-0 snap-start flex flex-col gap-2 cursor-pointer">
+                                <div
+                                    class="overflow-hidden rounded-lg border-2 border-transparent transition group-hover:border-[#30BE76]">
+                                    <img src="assets/Image (11).png" alt="" class="w-40">
+                                </div>
+                                <p class="text-center">western (8)</p>
+                            </div>
+
+                            <div class="group shrink-0 snap-start flex flex-col gap-2 cursor-pointer">
+                                <div
+                                    class="overflow-hidden rounded-lg border-2 border-transparent transition group-hover:border-[#30BE76]">
+                                    <img src="assets/Image (11).png" alt="" class="w-40">
+                                </div>
+                                <p class="text-center">western (8)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4 flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-2">
+
+                    <div class="flex flex-col gap-4">
+                        <div class="flex flex-col gap-4">
+                            <img src="assets/Image (7).png" alt="" class="rounded-t-lg">
+                            <h1 class="text-[#030F09] text-[16px] font-semibold">Cooked Coconut Mussels</h1>
+
+                        </div>
+                        <div class="flex flex-row justify-between items-center">
+                            <p class="text-[12px] text-[#767676]">± 5 mins * 4 ingredients </p>
+                            <div
+                                class="flex flex-row items-center border-[#30BE76] border-2 gap-1 px-1 text-[13px] text-[#30BE76] rounded-md">
+                                <img src="assets/Play - Color.png" class="mt-1"><span>cook</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <div class="flex flex-col gap-4">
+                            <img src="assets/Image (7).png" alt="" class="rounded-t-lg">
+                            <h1 class="text-[#030F09] text-[16px] font-semibold">Banana and Mandarin Buns</h1>
+
+                        </div>
+                        <div class="flex flex-row justify-between items-center">
+                            <p class="text-[12px] text-[#767676]">± 45 mins * 4 ingredients </p>
+                            <div
+                                class="flex flex-row items-center border-[#30BE76] border-2 gap-1 px-1 text-[13px] text-[#30BE76] rounded-md">
+                                <img src="assets/Play - Color.png" class="mt-1"><span>cook</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <div class="flex flex-col gap-4">
+                            <img src="assets/Image (7).png" alt="" class="rounded-t-lg">
+                            <h1 class="text-[#030F09] text-[16px] font-semibold">Cooked Coconut Mussels</h1>
+
+                        </div>
+                        <div class="flex flex-row justify-between items-center">
+                            <p class="text-[12px] text-[#767676]">± 5 mins * 4 ingredients </p>
+                            <div
+                                class="flex flex-row items-center border-[#30BE76] border-2 gap-1 px-1 text-[13px] text-[#30BE76] rounded-md">
+                                <img src="assets/Play - Color.png" class="mt-1"><span>cook</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <div class="flex flex-col gap-4">
+                            <img src="assets/Image (7).png" alt="" class="rounded-t-lg">
+                            <h1 class="text-[#030F09] text-[16px] font-semibold">Cooked Coconut Mussels</h1>
+
+                        </div>
+                        <div class="flex flex-row justify-between items-center">
+                            <p class="text-[12px] text-[#767676]">± 5 mins * 4 ingredients </p>
+                            <div
+                                class="flex flex-row items-center border-[#30BE76] border-2 gap-1 px-1 text-[13px] text-[#30BE76] rounded-md">
+                                <img src="assets/Play - Color.png" class="mt-1"><span>cook</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <div class="flex flex-col gap-4">
+                            <img src="assets/Image (7).png" alt="" class="rounded-t-lg">
+                            <h1 class="text-[#030F09] text-[16px] font-semibold">Cooked Coconut Mussels</h1>
+
+                        </div>
+                        <div class="flex flex-row justify-between items-center">
+                            <p class="text-[12px] text-[#767676]">± 5 mins * 4 ingredients </p>
+                            <div
+                                class="flex flex-row items-center border-[#30BE76] border-2 gap-1 px-1 text-[13px] text-[#30BE76] rounded-md">
+                                <img src="assets/Play - Color.png" class="mt-1"><span>cook</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <div class="flex flex-col gap-4">
+                            <img src="assets/Image (7).png" alt="" class="rounded-t-lg">
+                            <h1 class="text-[#030F09] text-[16px] font-semibold">Cooked Coconut Mussels</h1>
+
+                        </div>
+                        <div class="flex flex-row justify-between items-center">
+                            <p class="text-[12px] text-[#767676]">± 5 mins * 4 ingredients </p>
+                            <div
+                                class="flex flex-row items-center border-[#30BE76] border-2 gap-1 px-1 text-[13px] text-[#30BE76] rounded-md">
+                                <img src="assets/Play - Color.png" class="mt-1"><span>cook</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </article>
+           </div>
+        </section>
+
+        <footer>
+            <div
+                class="absolute hidden md:block lg:hidden md:left-0 md:flex md:flex-row md:justify-center md:items-center md:gap-24 mt-8 w-full py-4 min-h-[60px]">
+                <img src="assets/Nav 1.png" alt="Nav 1" class="object-contain">
+                <img src="assets/Nav 2.png" alt="Nav 2" class="object-contain">
+                <img src="assets/Nav 3.png" alt="Nav 3" class="object-contain">
+            </div>
+        </footer>
+
+    </main>
+
+</body>
+
+</html>

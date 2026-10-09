@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>receipt view</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Alpine.js (was missing) -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style type="text/tailwindcss">
+        @layer components {
+            .container {
+                @apply w-full mx-auto px-4 sm:px-10 md:px-20 lg:px-[180px];
+            }
+        }
+    </style>
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <header
+            class="fixed hidden md:block top-0 left-0 w-full bg-white z-40 border-b border-[#E5E5E5] lg:bg-white/90 lg:backdrop-blur-sm">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="assets/Logo (1).png" alt="Scratch Logo" class="h-6 w-auto object-contain">
+                </div>
+
+                <!-- Search Bar -->
+                <div class="hidden lg:flex items-center gap-2 border-b border-[#A8A8A8] pb-1 w-72">
+                    <img src="assets/Nav 1.png" alt="Search icon" class="w-4 h-4 object-contain">
+                    <input type="text" placeholder="Search recipe, Profile, ingredients"
+                        class="text-xs text-gray-500 bg-transparent outline-none w-full placeholder-gray-400">
+                </div>
+
+                <!-- Right Action Icons -->
+                <div class="flex items-center gap-4">
+                    <button aria-label="Notifications" class="focus:outline-none hover:opacity-80 transition-opacity">
+                        <img src="assets/Notifications.png" alt="Notifications" class="w-5 h-5 object-contain">
+                    </button>
+                    <button aria-label="Messages" class="focus:outline-none hover:opacity-80 transition-opacity">
+                        <img src="assets/Messages.png" alt="Messages" class="w-5 h-5 object-contain">
+                    </button>
+                    <img src="assets/Avatar.png" alt="Avatar" class="w-8 h-8 rounded-full object-cover cursor-pointer">
+                </div>
+            </div>
+        </header>
+
+        <!-- Action Bar (Back Link & Cook Now Button) -->
+        <div class="hidden lg:hidden md:flex container mx-auto px-4 sm:px-6 lg:px-8 items-center justify-between mt-20">
+            <a href="feed.htm" class="text-[#767676] text-xs hover:text-black transition-colors">&lt; back to my profile</a>
+
+            <button
+                class="md:hidden  block flex items-center justify-center gap-1.5 border bg-[#2E2E2E]/60 border-white rounded-lg px-3 py-1 hover:bg-[#2E2E2E]/80 transition-colors">
+                <img src="assets/Line.png" alt="play button" class="w-3 h-3 object-contain">
+                <span class="text-sm text-white font-medium whitespace-nowrap">Cook Now</span>
+            </button>
+            <div class="hidden md:block md:flex md:gap-1">
+                <img src="assets/Edit - Color.png" alt="">
+                <span class="text-[#30BE76] text-2xs">Edit recipe</span>
+            </div>
+        </div>
+        <div
+            class="hidden md:flex lg:hidden container  mx-auto px-4 sm:px-6 lg:px-8 items-center lg:mt-20   justify-between mt-4">
+            <p class="md:text-xl  md:text-[#030F09] md:font-bold">Sautéed Orange & Mustard <br> Bruschetta</p>
+            <div>
+
+                <div class="flex flex-row gap-4">
+                    <div class="hidden md:hidden md:flex lg:flex lg:flex-row lg:gap-1 items-center">
+                        <img src="assets/Edit - Color.png" alt="lg:w-6 lg:h-6">
+                        <span class="text-[#30BE76] text-2xs">Edit recipe</span>
+                    </div>
+                    <button
+                        class="bg-[#30BE76] text-white px-4 py-2 rounded-lg hover:bg-[#2A9A60] transition-colors">start
+                        cooking</button>
+                </div>
+            </div>
+        </div>
+        <div class="relative md:hidden lg:hidden mt-4">
+            <img src="assets/Image (15).png" alt="image" class="w-full h-[300px] brightness-70 object-cover">
+
+            <div class="container block md:hidden flex flex-row justify-between absolute top-4 left-0 right-0">
+                <a href="feed.htm" class="text-white text-[12px]">&lt; back to my profile</a>
+                <div class="flex flex-row items-center w-24 gap-1 border bg-[#2E2E2E]/60 border-white rounded-lg p-1">
+                    <img src="assets/Line.png" alt="black play button">
+                    <span class="text-sm text-white">Cook Now</span>
+                </div>
+            </div>
+
+            <div class="absolute bottom-6 left-4">
+                <p class="text-[20px] text-white">Engine-Cooked Hooney <br> Orange Pancake</p>
+            </div>
+        </div>
+
+        <div class="md:flex md:flex-row lg:hidden md:justify-between container mx-auto px-4 sm:px-6 lg:px-8 mt-4">
+            <div class="hidden md:block">
+                <img src="assets/Image (15).png" alt="" class="w-[380px] h-[250px] object-cover rounded-lg">
+            </div>
+
+            <div class="p-4" x-data="{
+            images: [
+                'assets/Image (15).png', 'assets/Image (13).png', 'assets/Image (3).png', 'assets/Image (4).png', 'assets/Image (5).png',
+                'assets/Image (6).png', 'assets/Image (7).png', 'assets/Image (8).png', 'assets/Image (9).png', 'assets/Image (10).png',
+                'assets/Image (11).png', 'assets/Image (1).png', 'assets/Image (2).png', 'assets/Image (14).png', 'assets/Image (12).png'
+            ],
+            isMd: window.matchMedia('(min-width: 768px)').matches,
+            open: false,
+            current: 0,
+            get max() { return this.isMd ? 6 : 3 },
+            get visible() { return this.images.slice(0, this.max) },
+            get extra() { return this.images.length - this.max },
+            show(i) { this.current = i; this.open = true }
+        }" x-init="
+            const mq = window.matchMedia('(min-width: 768px)');
+            mq.addEventListener('change', e => isMd = e.matches);
+        ">
+                <!-- Thumbnail strip: wraps so 6 tiles fit nicely -->
+                <div class="grid grid-cols-3 gap-2">
+                    <template x-for="(img, i) in visible" :key="i">
+                        <button type="button" class="relative h-24 w-24 overflow-hidden rounded" @click="show(i)">
+                            <img :src="img" alt="" class="h-full w-full object-cover" />
+
+                            <span x-show="i === max - 1 && extra > 0" x-text="extra + '+'"
+                                class="absolute inset-0 flex items-center justify-center bg-white/80 text-lg font-semibold text-gray-900"></span>
+                        </button>
+                    </template>
+                </div>
+
+                <!-- Lightbox -->
+                <div x-show="open" x-transition.opacity x-cloak @click.self="open = false"
+                    @keydown.escape.window="open = false"
+                    class="fixed inset-0 z-50 flex items-center justify-center px-4 gap-4 bg-black/85">
+                    <button type="button" class="px-3 text-4xl text-white"
+                        @click="current = (current - 1 + images.length) % images.length">‹</button>
+
+                    <img :src="images[current]" alt="" class="max-h-[80vh] max-w-[80vw] object-contain" />
+
+                    <button type="button" class="px-3 text-4xl text-white"
+                        @click="current = (current + 1) % images.length">›</button>
+
+                    <button type="button" class="absolute right-4 top-4 text-3xl text-white"
+                        @click="open = false">×</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="mx-auto max-w-md bg-white" x-data="
+               {
+                    tab: 'ingredients',
+                    tabs: [
+                    { id: 'ingredients', label: 'Ingredients' },
+                    { id: 'cook',        label: 'How to Cook' },
+                    { id: 'note',        label: 'Add information' }
+                    ],
+                    ingredients: [
+                    'cooking spray',
+                    '1/2 cup whole milk',
+                    '2 large eggs',
+                    '1 tablespoon maple syrup',
+                    '1/2 teaspoon vanilla extract'
+                    ],
+                    steps: [
+                    'Whisk the milk, eggs, maple syrup and vanilla together.',
+                    'Heat a pan and coat it with cooking spray.',
+                    'Pour in the batter and cook until golden on both sides.'
+                    ]
+                }">
+            <div class="md:container block md:block lg:hidden md:flex-1">
+                <!-- Tab bar -->
+                <div class="flex border-b border-gray-200 md:justify-start md:gap-53 md:-ml-35 md:pr-8">
+                    <template x-for="t in tabs" :key="t.id">
+                        <button type="button" @click="tab = t.id" x-text="t.label"
+                            class="-mb-px flex-1 border-b-2 px-2 py-3 text-sm transition-colors md:flex-none md:px-1"
+                            :class="tab === t.id
+                        ? 'border-green-500 font-medium text-gray-900'
+                        : 'border-transparent text-gray-400 hover:text-gray-600'"></button>
+                    </template>
+                </div>
+
+                <!-- Ingredients panel -->
+                <ul x-show="tab === 'ingredients'" x-cloak
+                    class="md:grid md:grid-cols-2 md:gap-x-40 md:justify-between md:gap-y-4 md:-ml-35">
+                    <template x-for="item in ingredients" :key="item">
+                        <li class="flex items-center gap-4 px-4 py-3 md:px-0">
+                            <img src="assets/Avatar.png" alt="" class="h-12 w-12 shrink-0 rounded-full object-cover" />
+                            <span class="text-sm text-gray-800" x-text="item"></span>
+                        </li>
+                    </template>
+                </ul>
+
+                <!-- How to Cook panel -->
+                <ol x-show="tab === 'cook'" x-cloak class="space-y-4 p-4 md:px-0">
+                    <template x-for="(step, i) in steps" :key="i">
+                        <li class="flex gap-3 text-sm text-gray-800">
+                            <span class="font-semibold text-green-600" x-text="i + 1 + '.'"></span>
+                            <span x-text="step"></span>
+                        </li>
+                    </template>
+                </ol>
+
+                <!-- Add Note panel -->
+                <div x-show="tab === 'note'" x-cloak class="p-4 md:px-0">
+                    <textarea class="w-full rounded border border-gray-200 p-3 text-sm" rows="4"
+                        placeholder="Write a note..."></textarea>
+                </div>
+
+            </div>
+        </div>
+        <div>
+            <div
+                class="hidden md:flex container  mx-auto px-4 sm:px-6 lg:px-8 items-center lg:mt-20   justify-between mt-4">
+
+                <section class="hidden lg:block bg-[#F5F5F5] py-8 px-4 lg:px-8 xl:px-12 2xl:px-20">
+                    <div class="flex gap-6">
+
+
+                        <article class="w-1/4 shrink-0 bg-[#FFFFFF] rounded-md p-4 shadow-md xl:h-104 lg:h-84 p-4">
+                            <img src="assets/Image (15).png" alt="" class="h-[150px] w-full rounded-lg object-cover">
+
+                            <div class="mt-3" x-data="{
+                images: [
+                    'assets/Image (15).png', 'assets/Image (13).png', 'assets/Image (3).png', 'assets/Image (4).png', 'assets/Image (5).png',
+                    'assets/Image (6).png', 'assets/Image (7).png', 'assets/Image (8).png', 'assets/Image (9).png', 'assets/Image (10).png',
+                    'assets/Image (11).png', 'assets/Image (1).png', 'assets/Image (2).png', 'assets/Image (14).png', 'assets/Image (12).png'
+                ],
+                max: 6,
+                open: false,
+                current: 0,
+                get visible() { return this.images.slice(0, this.max) },
+                get extra() { return this.images.length - this.max },
+                show(i) { this.current = i; this.open = true }
+            }">
+
+                                <div class="grid grid-cols-3 gap-2">
+                                    <template x-for="(img, i) in visible" :key="i">
+                                        <button type="button"
+                                            class="relative aspect-square w-full overflow-hidden rounded"
+                                            @click="show(i)">
+                                            <img :src="img" alt="" class="h-full w-full object-cover" />
+                                            <span x-show="i === max - 1 && extra > 0" x-text="extra + '+'"
+                                                class="absolute inset-0 flex items-center justify-center bg-white/80 text-lg font-semibold text-gray-900"></span>
+                                        </button>
+                                    </template>
+                                </div>
+
+
+                                <div x-show="open" x-transition.opacity x-cloak @click.self="open = false"
+                                    @keydown.escape.window="open = false"
+                                    class="fixed inset-0 z-50 flex items-center justify-center gap-4 bg-black/85 px-4">
+                                    <button type="button" class="px-3 text-4xl text-white"
+                                        @click="current = (current - 1 + images.length) % images.length">‹</button>
+                                    <img :src="images[current]" alt=""
+                                        class="max-h-[80vh] max-w-[80vw] object-contain" />
+                                    <button type="button" class="px-3 text-4xl text-white"
+                                        @click="current = (current + 1) % images.length">›</button>
+                                    <button type="button" class="absolute right-4 top-4 text-3xl text-white"
+                                        @click="open = false">×</button>
+                                </div>
+                            </div>
+                        </article>
+
+
+                        <article class="min-w-0 flex-1 ">
+                            <div class="flex flex-col gap-6 mb-8 bg-[#FFFFFF] rounded-md p-4 shadow-md h-cover p-4">
+
+                                <div
+                                    class="mb-4 flex flex-row items-center justify-between gap-6 border-b border-gray-200 pb-4">
+                                    <p class="text-xl font-bold text-[#030F09]">Sautéed Orange &amp; Mustard <br>
+                                        Bruschetta</p>
+
+                                    <div class="flex shrink-0 flex-row items-center gap-3">
+                                        <button type="button"
+                                            class="flex flex-row items-center gap-1 whitespace-nowrap rounded-lg border border-[#30BE76] px-3 py-2 transition-colors hover:bg-[#30BE76]/10">
+                                            <img src="assets/Edit - Color.png" alt="" class="h-4 w-4 shrink-0">
+                                            <span class="text-xs text-[#030F09]">Edit recipe</span>
+                                        </button>
+                                        <button type="button"
+                                            class="whitespace-nowrap rounded-lg bg-[#30BE76] px-4 py-2 text-sm text-white transition-colors hover:bg-[#2A9A60]">
+                                            Start cooking
+                                        </button>
+                                    </div>
+                                </div>
+
+
+                                <div class="flex flex-col gap-4">
+                                    <h2 class="text-xl font-bold capitalize text-[#030F09]">Ingredients</h2>
+
+                                    <ul class="grid grid-cols-2 gap-x-6 gap-y-4">
+                                        <li class="flex items-center gap-4">
+                                            <img src="assets/Avatar.png" alt=""
+                                                class="h-12 w-12 shrink-0 rounded-full object-cover">
+                                            <span class="text-sm text-[#030F09]">cooking spray</span>
+                                        </li>
+                                        <li class="flex items-center gap-4">
+                                            <img src="assets/Avatar.png" alt=""
+                                                class="h-12 w-12 shrink-0 rounded-full object-cover">
+                                            <span class="text-sm text-[#030F09]">1/2 cup whole milk</span>
+                                        </li>
+                                        <li class="flex items-center gap-4">
+                                            <img src="assets/Avatar.png" alt=""
+                                                class="h-12 w-12 shrink-0 rounded-full object-cover">
+                                            <span class="text-sm text-[#030F09]">2 large eggs</span>
+                                        </li>
+                                        <li class="flex items-center gap-4">
+                                            <img src="assets/Avatar.png" alt=""
+                                                class="h-12 w-12 shrink-0 rounded-full object-cover">
+                                            <span class="text-sm text-[#030F09]">1 tablespoon maple syrup</span>
+                                        </li>
+                                        <li class="flex items-center gap-4">
+                                            <img src="assets/Avatar.png" alt=""
+                                                class="h-12 w-12 shrink-0 rounded-full object-cover">
+                                            <span class="text-sm text-[#030F09]">1/2 teaspoon vanilla extract</span>
+                                        </li>
+                                        <li class="flex items-center gap-4">
+                                            <img src="assets/Avatar.png" alt=""
+                                                class="h-12 w-12 shrink-0 rounded-full object-cover">
+                                            <span class="text-sm text-[#030F09]">1 pinch salt</span>
+                                        </li>
+                                        <li class="flex items-center gap-4">
+                                            <img src="assets/Avatar.png" alt=""
+                                                class="h-12 w-12 shrink-0 rounded-full object-cover">
+                                            <span class="text-sm text-[#030F09]">4 pieces 1/2-inch thick brioche</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col gap-6 mb-8 bg-[#FFFFFF] rounded-md p-4 shadow-md h-cover p-4">
+
+                                <div class="mt-8 flex flex-col gap-6  ">
+                                    <h2 class="text-xl font-bold text-[#030F09]">How to cook</h2>
+
+                                    <div class="grid grid-cols-2 gap-8">
+                                        <ol class="flex flex-col gap-4 text-sm text-[#030F09]">
+                                            <li class="flex gap-4">
+                                                <img src="assets/Numbering.png" alt="1" class="h-6 w-6 shrink-0">
+                                                <p>Heat a Belgian waffle iron.</p>
+                                            </li>
+                                            <li class="flex gap-4">
+                                                <img src="assets/Numbering (1).png" alt="2" class="h-6 w-6 shrink-0">
+                                                <p>Mix the flour, sugar, and baking powder together in a mixing bowl.
+                                                    Stir
+                                                    in 1 cup eggnog, butter, and the egg until well blended. Add more
+                                                    eggnog
+                                                    if needed to make a pourable batter.</p>
+                                            </li>
+                                            <li class="flex gap-4">
+                                                <img src="assets/Numbering (2).png" alt="3" class="h-6 w-6 shrink-0">
+                                                <p>Lightly grease or spray the waffle iron with non-stick cooking spray.
+                                                    Pour some batter onto the preheated waffle iron, close the top, and
+                                                    cook
+                                                    until golden brown and crisp on both sides. Waffles are usually
+                                                    cooked
+                                                    until steam subsides. Transfer waffles to a serving plate, and keep
+                                                    warm.</p>
+                                            </li>
+                                            <li class="flex gap-4">
+                                                <img src="assets/Numbering (3).png" alt="4" class="h-6 w-6 shrink-0">
+                                                <p>Meanwhile, place the raspberry preserves in a pan, and heat over
+                                                    medium
+                                                    heat until pourable.</p>
+                                            </li>
+                                            <li class="flex gap-4">
+                                                <img src="assets/Numbering (4).png" alt="5" class="h-6 w-6 shrink-0">
+                                                <p>To serve, drizzle raspberry preserves over each waffle, and top with
+                                                    raspberries. If desired, add a dollop of whipped cream to each
+                                                    waffle.
+                                                </p>
+                                            </li>
+                                        </ol>
+
+
+                                        <div class="relative h-fit overflow-hidden rounded-lg shadow-md">
+                                            <video class="w-full object-cover" poster="assets/Video (1).png"
+                                                preload="metadata" playsinline>
+                                                <source src="assets/recipe.mp4" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                            </video>
+                                            <button type="button" aria-label="Play video"
+                                                onclick="const v = this.previousElementSibling; v.play(); v.controls = true; this.classList.add('hidden');"
+                                                class="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 shadow-lg transition hover:scale-110">
+                                                <svg viewBox="0 0 24 24" class="ml-1 h-7 w-7 fill-[#30BE76]">
+                                                    <path d="M8 5v14l11-7z" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-8 flex flex-col gap-6">
+                                    <div>
+                                        <p>Additional Information</p>
+                                    </div>
+                                    <div class="flex justify-between gap-4">
+                                        <div class="flex  gap-10">
+                                            <div class="flex flex-col gap-6 text-[#A8A8A8] text-[14px]">
+                                                <P>Serving Time (+/-)</P>
+                                                <p>Nutrition Facts</p>
+                                            </div>
+                                            <div class="flex flex-col gap-6 text-[#030F09] text-[14px] ">
+                                                <p>12 Mins</p>
+                                                <p>222 calories <br> 6.2g fat <br>7.2g carbohydrates <br> 28.6g protein
+                                                    <br>
+                                                    68g
+                                                    cholesterol <br> 268mg sodium</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex  gap-10">
+                                            <div class="flex flex-col gap-6 text-[#A8A8A8] text-[14px]">
+                                                <p>Tags</p>
+                                            </div>
+                                            <div>
+                                                <p>Sweet, Coconut, Quick , Easy, <br> Homemade</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        </div>
+
+    </main>
+</body>
+
+</html>

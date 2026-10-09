@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create ricipe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+
+    <style type="text/tailwindcss">
+        @layer component {
+        .container {
+          @apply w-full mx-auto px-4 sm:px-10 md:px-20 lg:px-[180px];
+        }
+      }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <div class="flex flex-col gap-4 my-10">
+            <div class="flex flex-col gap-4 mb-4 ">
+                <p class="text-[12px] text-[#767676]">
+                    &lt; Back to My Recipes</p>
+                <h1 class="font-bold">New Recipe</h1>
+            </div>
+            <div class="flex flex-row gap-4">
+                <div class="border-dashed border-[#979797] border-2 w-16 text-center  p-4 rounded-lg">
+                    +
+                </div>
+                <div class="flex flex-col gap-2">
+                    <p class="text-[14px] text-[#A8A8A8]">Recipe Name</p>
+                    <input type="text" placeholder="Write Down Recipe Name " class="border-b border-b-black w-full text-[14px] text-black placeholder:text-[14px] placeholder:text-black p-2 pr-10 md:pr-[500px] lg:pr-[700px]  bg-none  rounded-md">
+                </div>
+            </div>
+            <div class="flex flex-col border bg-white/100 shadow-lg p-2 rounded-md gap-4">
+                <div class="flex justify-between items-center text-[16px] font-bold">
+                    <label for="gallery" >Gallery</label>
+                    <img src="assets/Edit.png" alt="">
+                </div>
+                <input type="text" placeholder="+ upload image or open camera"
+                    class="border-dashed border-[#979797] border-2 w-full text-center  p-2 rounded-md">
+            </div>
+            <div class="flex flex-col border bg-white/100 shadow-lg p-2 rounded-md gap-4">
+                <div class="flex justify-between items-center text-[16px] font-bold">
+                    <label for="ingredients">Ingredients</label>
+                    <img src="assets/Edit.png" alt="">
+                </div>
+                <input type="text" placeholder="+ Add ingredients "
+                    class="border-dashed border-[#979797] border-2 w-full text-center  p-2 rounded-md">
+            </div>
+            <div class="flex flex-col border bg-white/100 shadow-lg p-2 rounded-md gap-4">
+                <div class="flex justify-between items-center text-[16px] font-bold">
+                    <label for="How to Cook">How to Cook</label>
+                    <img src="assets/Edit.png" alt="">
+                </div>
+                <input type="text" placeholder="+ Add Directions "
+                    class="border-dashed border-[#979797] border-2 w-full text-center  p-2 rounded-md">
+            </div>
+            <div class="flex flex-col border bg-white/100 shadow-lg p-2 rounded-md gap-4">
+                <div class="flex justify-between items-center text-[16px] font-bold">
+                    <label for="info">Additional Info</label>
+                    <img src="assets/Edit.png" alt="">
+                </div>
+                <input type="text" placeholder="+ Add Info "
+                    class="border-dashed border-[#979797] border-2 w-full text-center  p-2 rounded-md">
+            </div>
+            <div class="lg:flex lg:flex-row lg:justify-between">
+                <p class="">save to</p>
+                <a href="#" class="hidden md:hidden lg:block"><p class="text-[16px] text-[#F8B449]">complete the recipe to post</p></a>
+            </div>
+            <div class="flex flex-col md:flex md:flex-row md:justify-between  md:text-center md:gap-0 gap-4">
+
+                <div class="flex flex-row justify-between ">
+                    <div class="border bg-white shadow-lg flex flex-row justify-between w-36 md:w-48 px-2  py-2 md:p-2 md:text-center rounded-lg">
+                        <h1>Western (5)</h1>
+                        <img src="assets/icon-arrow down.png" alt="">
+                    </div>
+                    <div class="block md:hidden border border-2 text-center py-2 px-1 rounded-lg text-[#30BE76] border-[#30BE76] ">
+                        <button>save Recipe</button>
+                    </div>
+                </div>
+                <div class="hidden md:block border md:w-30 border-2 text-center py-2 md:px-12  px-1 rounded-lg text-[#30BE76] border-[#30BE76] ">
+                    <a href="recieptVeiw.htm">save Recipe</a>
+                </div>
+                <div class="border bg-[#CCCCCC] md:bg-[#30BE76] text-center py-4 md:px-12 md:py-1 text-center  px-1 rounded-lg text-[#FFFFFF] ">
+                    <button>post to feed </button>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+</body>
+
+</html>
