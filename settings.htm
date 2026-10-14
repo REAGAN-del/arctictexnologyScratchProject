@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>settings</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Alpine.js (was missing) -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style type="text/tailwindcss">
+        @layer components {
+            .container {
+                @apply w-full mx-auto px-4 sm:px-10 md:px-20 lg:px-[180px];
+            }
+        }
+    </style>
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <header
+        class="  fixed hidden md:block top-0 left-0 w-full bg-white z-40 border-b border-[#E5E5E5] lg:bg-white/90 lg:backdrop-blur-sm">
+        <div class=" px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <img src="assets/Logo (1).png" alt="Scratch Logo" class="h-6 w-auto object-contain">
+            </div>
+
+            <!-- Search Bar -->
+            <div class="hidden lg:flex items-center gap-2 border-b border-[#A8A8A8] pb-1 w-72">
+                <img src="assets/Nav 1.png" alt="Search icon" class="w-4 h-4 object-contain">
+                <input type="text" placeholder="Search recipe, Profile, ingredients"
+                    class="text-xs text-gray-500 bg-transparent outline-none w-full placeholder-gray-400">
+            </div>
+
+            <!-- Right Action Icons -->
+            <div class="flex items-center gap-4">
+                <button aria-label="Notifications" class="focus:outline-none hover:opacity-80 transition-opacity">
+                    <img src="assets/Notifications.png" alt="Notifications" class="w-5 h-5 object-contain">
+                </button>
+                <button aria-label="Messages" class="focus:outline-none hover:opacity-80 transition-opacity">
+                    <img src="assets/Messages.png" alt="Messages" class="w-5 h-5 object-contain">
+                </button>
+                <img src="assets/Avatar.png" alt="Avatar" class="w-8 h-8 rounded-full object-cover cursor-pointer">
+            </div>
+        </div>
+    </header>
+    <main class=" ">
+        <div class="mt-4  xl:hidden mx-4 flex flex-col gap-4 mb-20">
+            <div class="flex justify-between">
+                <p class="text-[#767676] text-[14px]">&lt; Back</p>
+                <div class="flex   ">
+                    <div>
+                        <img src="assets/Logout.png" alt="" class="w-6 h-4 mt-1">
+                    </div>
+                    <div>
+                        <span class="text-[#30BE76] text-[14px]">LOG OUT</span>
+                    </div>
+                </div>
+            </div>
+            <h1 class="text-[#030F09] text-[24px] font-bold">Settings</h1>
+
+            <p class="text-[#606060] text-[12px]">Push Notiffications </p>
+
+            <div class="p-4 -ml-4 flex justify-between ">
+                <h1 class="text-[#030F09] font-semi-bold text-[16px]">Notify me for followers</h1>
+
+                <label class="relative inline-block w-12 h-6 cursor-pointer select-none">
+                    <input type="checkbox" class="sr-only peer">
+                    <span
+                        class="absolute inset-0 bg-gray-300 rounded-full transition-colors duration-200 peer-checked:bg-emerald-500 peer-focus-visible:ring-0 peer-focus-visible:ring-emerald-500 peer-focus-visible:ring-offset-2
+                 before:content-[''] before:absolute before:h-4 before:w-4 before:left-1 before:bottom-1 before:bg-white before:transition-transform before:duration-200 peer-checked:before:translate-x-6"></span>
+                </label>
+            </div>
+            <div class="p-4 -ml-4 flex justify-between ">
+                <h1 class="text-[#030F09]  font-semi-bold text-[16px]">When someone do live</h1>
+
+                <label class="relative inline-block w-12 h-6 cursor-pointer select-none">
+                    <input type="checkbox" class="sr-only peer">
+                    <span
+                        class="absolute inset-0 bg-gray-300 rounded-full transition-colors duration-200 peer-checked:bg-emerald-500 peer-focus-visible:ring-0 peer-focus-visible:ring-emerald-500 peer-focus-visible:ring-offset-2
+                 before:content-[''] before:absolute before:h-4 before:w-4 before:left-1 before:bottom-1 before:bg-white before:transition-transform before:duration-200 peer-checked:before:translate-x-6"></span>
+                </label>
+            </div>
+            <div class="p-4 -ml-4 -mt-4 flex justify-between ">
+                <h1 class="text-[#030F09]  font-semi-bold text-[16px]">When someone send me</h1>
+
+                <label class="relative inline-block w-12 h-6 cursor-pointer select-none">
+                    <input type="checkbox" class="sr-only peer">
+                    <span
+                        class="absolute inset-0 bg-gray-300 rounded-full transition-colors duration-200 peer-checked:bg-emerald-500 peer-focus-visible:ring-0 peer-focus-visible:ring-emerald-500 peer-focus-visible:ring-offset-2
+                 before:content-[''] before:absolute before:h-4 before:w-4 before:left-1 before:bottom-1 before:bg-white before:transition-transform before:duration-200 peer-checked:before:translate-x-6"></span>
+                </label>
+            </div>
+            <hr>
+
+            <p class="text-[#606060] text-[12px]">Privacy settings </p>
+
+            <div class="p-4 -ml-4 -mt-4 flex justify-between ">
+                <h1 class="text-[#030F09]  font-semi-bold text-[16px]">Followers can see my saved recipese</h1>
+
+                <label class="relative inline-block w-12 h-6 cursor-pointer select-none">
+                    <input type="checkbox" class="sr-only peer">
+                    <span
+                        class="absolute inset-0 bg-gray-300 rounded-full transition-colors duration-200 peer-checked:bg-emerald-500 peer-focus-visible:ring-0 peer-focus-visible:ring-emerald-500 peer-focus-visible:ring-offset-2
+                 before:content-[''] before:absolute before:h-4 before:w-4 before:left-1 before:bottom-1 before:bg-white before:transition-transform before:duration-200 peer-checked:before:translate-x-6"></span>
+                </label>
+            </div>
+            <div>
+                <p class="text-[14px] text-[#606060]">If disabled, you won’t be able to see <br> recipes saved by other
+                    profiles. Leave <br> this enabled to share your collected <br> recipes to others. <strong class="text-[#30BE76]"> why this matter?</strong>
+                </p>
+            </div>
+            
+            <div class="p-4 -ml-4 -mt-4 flex justify-between ">
+                <h1 class="text-[#030F09]  font-semi-bold text-[16px]">Followers can see profiles I follow</h1>
+
+                <label class="relative inline-block w-12 h-6 cursor-pointer select-none">
+                    <input type="checkbox" class="sr-only peer">
+                    <span
+                        class="absolute inset-0 bg-gray-300 rounded-full transition-colors duration-200 peer-checked:bg-emerald-500 peer-focus-visible:ring-0 peer-focus-visible:ring-emerald-500 peer-focus-visible:ring-offset-2
+                 before:content-[''] before:absolute before:h-4 before:w-4 before:left-1 before:bottom-1 before:bg-white before:transition-transform before:duration-200 peer-checked:before:translate-x-6"></span>
+                </label>
+            </div>
+            <hr>
+             <div class="p-4 -ml-4 -mt-4 flex justify-between ">
+                <h1 class="text-[#030F09]  font-semi-bold text-[16px]">Followers can see profiles I follow</h1>
+
+               <p>&gt</p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

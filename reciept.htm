@@ -58,83 +58,92 @@
         <section class=" w-full h-[255px]
            lg:bg-[url('assets/Background.png')] lg:bg-full lg:bg-cover lg:bg-no-repeat
            px-4 sm:px-6 lg:px-8 pt-28 lg:flex lg:gap-12 lg:items-start">
-           <div class="container flex">
-            <!-- User profile info -->
-            <article class="  lg:w-1/4 lg:shrink-0">
-                <div class="hidden lg:block space-y-6 sticky top-24">
+            <div class="container flex">
+                <!-- User profile info -->
+                <article class="  lg:w-1/4 lg:shrink-0">
+                    <div class="hidden lg:block space-y-6 sticky top-24">
 
-                    <div
-                        class="p-4 bg-white flex flex-col justify-content rounded-lg shadow-sm border border-gray-100 lg:px-4">
-                        <div class="flex items-center gap-3 pb-4 border-b border-[#E5E5E5]">
-                            <img src="assets/Avatar.png" alt="Nick Evans" class="w-10 h-10 rounded-full object-cover">
-                            <div>
-                                <p class="text-xs font-bold text-[#030F09]">Nick Evans</p>
-                                <p class="text-[10px] text-gray-500">Photo Master</p>
-                                <p class="text-[10px] text-gray-400">23k likes</p>
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-center text-center text-[10px] mt-4 px-2">
-                            <div>
-                                <p class="font-bold text-xs text-[#030F09]">20</p>
-                                <p class="text-gray-500">Recipes</p>
-                            </div>
-                            <div>
-                                <p class="font-bold text-xs text-[#030F09]">75</p>
-                                <p class="text-gray-500">Served</p>
-                            </div>
-                            <div>
-                                <p class="font-bold text-xs text-[#030F09]">248</p>
-                                <p class="text-gray-500">Following</p>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div
-                        class="p-4 bg-white rounded-lg shadow-sm border border-gray-100 text-[#606060] text-xs space-y-2.5">
-                        <p class="text-[#030F09] font-bold mb-3">Top 5 Recipe today</p>
-                        <p class="hover:text-[#30BE76] cursor-pointer transition-colors">Tea-Smoked Creamy Chicken</p>
-                        <p class="hover:text-[#30BE76] cursor-pointer transition-colors">Pickled Savory Tortilla</p>
-                        <p class="hover:text-[#30BE76] cursor-pointer transition-colors">Stuffed Basil & Mint Salmon</p>
-                        <p class="hover:text-[#30BE76] cursor-pointer transition-colors">Strawberry Jelly</p>
-                        <p class="hover:text-[#30BE76] cursor-pointer transition-colors">Cinnamon and Lime Toffee</p>
-                    </div>
-                </div>
-            </article>
-
-
-            <!-- Main Container -->
-            <article class="lg:w-3/4 lg:mt-0 pl-4 absolute lg:relative top-0 left-0 w-full ">
-                <div class="flex flex-col gap-2">
-                    <div class="lg:hidden md:flex md:flex-row md:justify-between">
-                        <a href="feed.htm" class="text-[#767676] text-[12px] capitalize">
-                            &lt; back to my profile</a>
-                        <a href="create-recipe.htm" class="hidden md:block text-[16px] text-[#30BE76] font-semibold"><span
-                                class="text-[24px]">+</span> Add New</a>
-                    </div>
-                    <div class="flex flex-row justify-between items-center">
-                        <h1 class="text-[#030F09] text-[24px] font-bold md:mt-4">My Recipes</h1>
-                        <a href="create-recipe.htm"
-                            class="block md:hidden lg:block lg:bg-white lg:text-[#30BE76] lg:rounded-2xl lg:p-2 lg:shadow-md text-[16px] text-[#30BE76] font-semibold"><span
-                                class="text-[24px]">+</span> Add New
-                            </a>
                         <div
-                            class="hidden lg:hidden md:block mt-2 flex flex-row justify-between md:flex md:flex-row md:justify-between md:justify-center md:gap-20 border bg-white/80 shadow-xl rounded-md p-4">
-                            <h1 class=" text-[#030F09] text-[16px]">western (5)</h1>
+                            class="p-4 bg-white flex flex-col justify-content rounded-lg shadow-sm border border-gray-100 lg:px-4">
+                            <div class="flex items-center gap-3 pb-4 border-b border-[#E5E5E5]">
+                                <img src="assets/Avatar.png" alt="Nick Evans"
+                                    class="w-10 h-10 rounded-full object-cover">
+                                <div>
+                                    <p class="text-xs font-bold text-[#030F09]">Nick Evans</p>
+                                    <p class="text-[10px] text-gray-500">Photo Master</p>
+                                    <p class="text-[10px] text-gray-400">23k likes</p>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center text-center text-[10px] mt-4 px-2">
+                                <div>
+                                    <p class="font-bold text-xs text-[#030F09]">20</p>
+                                    <p class="text-gray-500">Recipes</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-xs text-[#030F09]">75</p>
+                                    <p class="text-gray-500">Served</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-xs text-[#030F09]">248</p>
+                                    <p class="text-gray-500">Following</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div
+                            class="p-4 bg-white rounded-lg shadow-sm border border-gray-100 text-[#606060] text-xs space-y-2.5">
+                            <div class="flex gap-2">
+                                <img src="assets/Edit.png" alt="">
+                                <p>Edit profile</p>
+                            </div>
+                            <div class="flex gap-2">
+                                <span>&#x2699;</span>
+                                <p>Edit profile</p>
+                            </div>
+                            <div class="flex gap-2">
+                                <img src="assets/Logout.png" alt="">
+                                <p>Edit profile</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- Main Container -->
+                <article class="lg:w-3/4 lg:mt-0 pl-4 absolute lg:relative top-0 left-0 w-full ">
+                    <div class="flex flex-col gap-2">
+                        <div class="lg:hidden md:flex md:flex-row md:justify-between">
+                            <a href="feed.htm" class="text-[#767676] text-[12px] capitalize">
+                                &lt; back to my profile</a>
+                            <a href="create-recipe.htm"
+                                class="hidden md:block text-[16px] text-[#30BE76] font-semibold"><span
+                                    class="text-[24px]">+</span> Add New</a>
+                        </div>
+                        <div class="flex flex-row justify-between items-center">
+                            <h1 class="text-[#030F09] text-[24px] font-bold md:mt-4">My Recipes</h1>
+                            <a href="create-recipe.htm"
+                                class="block md:hidden lg:block lg:bg-white lg:text-[#30BE76] lg:rounded-2xl lg:p-2 lg:shadow-md text-[16px] text-[#30BE76] font-semibold"><span
+                                    class="text-[24px]">+</span> Add New
+                            </a>
+                            <div
+                                class="hidden lg:hidden md:block mt-2 flex flex-row justify-between md:flex md:flex-row md:justify-between md:justify-center md:gap-20 border bg-white/80 shadow-xl rounded-md p-4">
+                                <h1 class=" text-[#030F09] text-[16px]">western (5)</h1>
+                                <img src="assets/icon-arrow down.png" alt="">
+                            </div>
+                        </div>
+                        <div
+                            class="block md:hidden mt-2 flex flex-row justify-between lg:items-right border bg-white/80 shadow-xl rounded-md p-4">
+                            <h1 class="text-[#030F09] text-[16px]">western (5)</h1>
                             <img src="assets/icon-arrow down.png" alt="">
                         </div>
                     </div>
-                    <div
-                        class="block md:hidden mt-2 flex flex-row justify-between lg:items-right border bg-white/80 shadow-xl rounded-md p-4">
-                        <h1 class="text-[#030F09] text-[16px]">western (5)</h1>
-                        <img src="assets/icon-arrow down.png" alt="">
-                    </div>
-                </div>
-                <div>
+                    <div>
 
 
 
-                    <div x-data="{
+                        <div x-data="{
         atStart: true,
         atEnd: false,
         step() {
@@ -151,164 +160,226 @@
         }
     }" x-init="update()" @resize.window="update()" class="relative hidden lg:block">
 
-                        <button type="button" @click="prev()" x-show="!atStart" x-transition.opacity
-                            aria-label="Previous" class="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/80 shadow-md
+                            <button type="button" @click="prev()" x-show="!atStart" x-transition.opacity
+                                aria-label="Previous" class="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/80 shadow-md
                    hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#30BE76]">
 
-                        </button>
+                            </button>
 
 
-                        <button type="button" @click="next()" x-show="!atEnd" x-transition.opacity aria-label="Next"
-                            class="absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/80 shadow-md
+                            <button type="button" @click="next()" x-show="!atEnd" x-transition.opacity aria-label="Next"
+                                class="absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/80 shadow-md
                    hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#30BE76]">
-                            <img src="assets/Next.png" alt="" class="h-8 w-10 rounded-lg">
-                        </button>
+                                <img src="assets/Next.png" alt="" class="h-8 w-10 rounded-lg">
+                            </button>
 
 
-                        <div x-ref="slider" @scroll.passive="update()" class="my-4 flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2
+                            <div x-ref="slider" @scroll.passive="update()" class="my-4 flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2
                 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
 
-                            <div class="group shrink-0 snap-start flex flex-col gap-2 cursor-pointer">
-                                <div
-                                    class="overflow-hidden rounded-lg border-2 border-transparent transition group-hover:border-[#30BE76]">
-                                    <img src="assets/Image (11).png" alt="" class="w-40">
+                                <div class="group shrink-0 snap-start flex flex-col gap-2 cursor-pointer">
+                                    <div
+                                        class="overflow-hidden rounded-lg border-2 border-transparent transition group-hover:border-[#30BE76]">
+                                        <img src="assets/Image (11).png" alt="" class="w-40">
+                                    </div>
+                                    <p class="text-center">western (8)</p>
                                 </div>
-                                <p class="text-center">western (8)</p>
-                            </div>
 
-                            <div class="group shrink-0 snap-start flex flex-col gap-2 cursor-pointer">
-                                <div
-                                    class="overflow-hidden rounded-lg border-2 border-transparent transition group-hover:border-[#30BE76]">
-                                    <img src="assets/Image (11).png" alt="" class="w-40">
+                                <div class="group shrink-0 snap-start flex flex-col gap-2 cursor-pointer">
+                                    <div
+                                        class="overflow-hidden rounded-lg border-2 border-transparent transition group-hover:border-[#30BE76]">
+                                        <img src="assets/Image (11).png" alt="" class="w-40">
+                                    </div>
+                                    <p class="text-center">western (8)</p>
                                 </div>
-                                <p class="text-center">western (8)</p>
-                            </div>
 
-                            <div class="group shrink-0 snap-start flex flex-col gap-2 cursor-pointer">
-                                <div
-                                    class="overflow-hidden rounded-lg border-2 border-transparent transition group-hover:border-[#30BE76]">
-                                    <img src="assets/Image (11).png" alt="" class="w-40">
+                                <div class="group shrink-0 snap-start flex flex-col gap-2 cursor-pointer">
+                                    <div
+                                        class="overflow-hidden rounded-lg border-2 border-transparent transition group-hover:border-[#30BE76]">
+                                        <img src="assets/Image (11).png" alt="" class="w-40">
+                                    </div>
+                                    <p class="text-center">western (8)</p>
                                 </div>
-                                <p class="text-center">western (8)</p>
-                            </div>
 
-                            <div class="group shrink-0 snap-start flex flex-col gap-2 cursor-pointer">
-                                <div
-                                    class="overflow-hidden rounded-lg border-2 border-transparent transition group-hover:border-[#30BE76]">
-                                    <img src="assets/Image (11).png" alt="" class="w-40">
+                                <div class="group shrink-0 snap-start flex flex-col gap-2 cursor-pointer">
+                                    <div
+                                        class="overflow-hidden rounded-lg border-2 border-transparent transition group-hover:border-[#30BE76]">
+                                        <img src="assets/Image (11).png" alt="" class="w-40">
+                                    </div>
+                                    <p class="text-center">western (8)</p>
                                 </div>
-                                <p class="text-center">western (8)</p>
-                            </div>
 
-                            <div class="group shrink-0 snap-start flex flex-col gap-2 cursor-pointer">
-                                <div
-                                    class="overflow-hidden rounded-lg border-2 border-transparent transition group-hover:border-[#30BE76]">
-                                    <img src="assets/Image (11).png" alt="" class="w-40">
+                                <div class="group shrink-0 snap-start flex flex-col gap-2 cursor-pointer">
+                                    <div
+                                        class="overflow-hidden rounded-lg border-2 border-transparent transition group-hover:border-[#30BE76]">
+                                        <img src="assets/Image (11).png" alt="" class="w-40">
+                                    </div>
+                                    <p class="text-center">western (8)</p>
                                 </div>
-                                <p class="text-center">western (8)</p>
-                            </div>
 
-                            <div class="group shrink-0 snap-start flex flex-col gap-2 cursor-pointer">
-                                <div
-                                    class="overflow-hidden rounded-lg border-2 border-transparent transition group-hover:border-[#30BE76]">
-                                    <img src="assets/Image (11).png" alt="" class="w-40">
+                                <div class="group shrink-0 snap-start flex flex-col gap-2 cursor-pointer">
+                                    <div
+                                        class="overflow-hidden rounded-lg border-2 border-transparent transition group-hover:border-[#30BE76]">
+                                        <img src="assets/Image (11).png" alt="" class="w-40">
+                                    </div>
+                                    <p class="text-center">western (8)</p>
                                 </div>
-                                <p class="text-center">western (8)</p>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-2">
+
+                        <div class="flex flex-col gap-4">
+                            <div class="flex flex-col gap-4">
+                                <img src="assets/Image (7).png" alt="" class="rounded-t-lg">
+                                <h1 class="text-[#030F09] text-[16px] font-semibold">Cooked Coconut Mussels</h1>
+
+                            </div>
+                            <div class="flex flex-row justify-between items-center">
+                                <p class="text-[12px] text-[#767676]">± 5 mins * 4 ingredients </p>
+                                <div
+                                    class="flex flex-row items-center border-[#30BE76] border-2 gap-1 px-1 text-[13px] text-[#30BE76] rounded-md">
+                                    <img src="assets/Play - Color.png" class="mt-1"><span>cook</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <div class="flex flex-col gap-4">
+                                <img src="assets/Image (7).png" alt="" class="rounded-t-lg">
+                                <h1 class="text-[#030F09] text-[16px] font-semibold">Banana and Mandarin Buns</h1>
+
+                            </div>
+                            <div class="flex flex-row justify-between items-center">
+                                <p class="text-[12px] text-[#767676]">± 45 mins * 4 ingredients </p>
+                                <div
+                                    class="flex flex-row items-center border-[#30BE76] border-2 gap-1 px-1 text-[13px] text-[#30BE76] rounded-md">
+                                    <img src="assets/Play - Color.png" class="mt-1"><span>cook</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <div class="flex flex-col gap-4">
+                                <img src="assets/Image (7).png" alt="" class="rounded-t-lg">
+                                <h1 class="text-[#030F09] text-[16px] font-semibold">Cooked Coconut Mussels</h1>
+
+                            </div>
+                            <div class="flex flex-row justify-between items-center">
+                                <p class="text-[12px] text-[#767676]">± 5 mins * 4 ingredients </p>
+                                <div
+                                    class="flex flex-row items-center border-[#30BE76] border-2 gap-1 px-1 text-[13px] text-[#30BE76] rounded-md">
+                                    <img src="assets/Play - Color.png" class="mt-1"><span>cook</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <div class="flex flex-col gap-4">
+                                <img src="assets/Image (7).png" alt="" class="rounded-t-lg">
+                                <h1 class="text-[#030F09] text-[16px] font-semibold">Cooked Coconut Mussels</h1>
+
+                            </div>
+                            <div class="flex flex-row justify-between items-center">
+                                <p class="text-[12px] text-[#767676]">± 5 mins * 4 ingredients </p>
+                                <div
+                                    class="flex flex-row items-center border-[#30BE76] border-2 gap-1 px-1 text-[13px] text-[#30BE76] rounded-md">
+                                    <img src="assets/Play - Color.png" class="mt-1"><span>cook</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <div class="flex flex-col gap-4">
+                                <img src="assets/Image (7).png" alt="" class="rounded-t-lg">
+                                <h1 class="text-[#030F09] text-[16px] font-semibold">Cooked Coconut Mussels</h1>
+
+                            </div>
+                            <div class="flex flex-row justify-between items-center">
+                                <p class="text-[12px] text-[#767676]">± 5 mins * 4 ingredients </p>
+                                <div
+                                    class="flex flex-row items-center border-[#30BE76] border-2 gap-1 px-1 text-[13px] text-[#30BE76] rounded-md">
+                                    <img src="assets/Play - Color.png" class="mt-1"><span>cook</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <div class="flex flex-col gap-4">
+                                <img src="assets/Image (7).png" alt="" class="rounded-t-lg">
+                                <h1 class="text-[#030F09] text-[16px] font-semibold">Cooked Coconut Mussels</h1>
+
+                            </div>
+                            <div class="flex flex-row justify-between items-center">
+                                <p class="text-[12px] text-[#767676]">± 5 mins * 4 ingredients </p>
+                                <div
+                                    class="flex flex-row items-center border-[#30BE76] border-2 gap-1 px-1 text-[13px] text-[#30BE76] rounded-md">
+                                    <img src="assets/Play - Color.png" class="mt-1"><span>cook</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </article>
+                <div x-show="isGalleryModalOpen" x-cloak
+                    class="fixed hidden inset-0 z-50 flex items-center justify-center bg-slate-900/50 backdrop-blur-sm p-4"
+                    x-transition.opacity>
+                    <div @click.outside="isGalleryModalOpen = false"
+                        class="w-full max-w-lg bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col max-h-[90vh]">
+                        <div class="px-6 py-5 flex items-center justify-between border-b border-slate-100">
+                            <h2 class="text-xl font-bold text-slate-900">Edit Gallery</h2>
+                            <button @click="isGalleryModalOpen = false"
+                                class="text-slate-400 hover:text-slate-600 transition cursor-pointer">✕</button>
+                        </div>
+                        <div class="p-6 space-y-6 overflow-y-auto flex-1">
+                            <div class="flex items-center justify-between">
+                                <span class="text-base font-bold text-slate-900"
+                                    x-text="`Images (${images.length})`"></span>
+                            </div>
+                            <div class="flex items-center gap-3 overflow-x-auto pb-2">
+                                <template x-for="(img, index) in images" :key="index">
+                                    <div @click="selectedImageIndex = index"
+                                        class="relative w-28 h-20 rounded-xl overflow-hidden cursor-pointer border-2 transition shrink-0"
+                                        :class="selectedImageIndex === index ? 'border-emerald-500 shadow-md ring-2 ring-emerald-500/20' : 'border-transparent opacity-75 hover:opacity-100'">
+                                        <img :src="img" alt="Gallery thumbnail" class="w-full h-full object-cover">
+                                        <span x-show="coverIndex === index"
+                                            class="absolute bottom-1 right-1 bg-emerald-600 text-white text-[10px] font-semibold px-1.5 py-0.5 rounded shadow">Cover</span>
+                                    </div>
+                                </template>
+                            </div>
+                            <div class="space-y-3 pt-2">
+                                <div @click="setAsCover()" class="flex items-center gap-3 cursor-pointer group py-1">
+                                    <div
+                                        class="w-5 h-5 rounded-full border-2 border-emerald-500 flex items-center justify-center">
+                                        <div class="w-2.5 h-2.5 bg-emerald-500 rounded-full"
+                                            x-show="coverIndex === selectedImageIndex"></div>
+                                    </div>
+                                    <span
+                                        class="text-base font-medium text-slate-800 group-hover:text-emerald-600 transition">Set
+                                        as Cover</span>
+                                </div>
+                                <div @click="removeSelectedImage()"
+                                    class="flex items-center gap-3 cursor-pointer group py-1 text-slate-700 hover:text-red-600 transition">
+                                    <span class="text-base font-medium">Remove Selected Image</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="border-2 border-dashed border-slate-300 mx-6 hover:border-emerald-500 rounded-2xl p-6 text-center cursor-pointer transition bg-slate-50 hover:bg-emerald-50/20">
+                            <div class="flex  items-center justify-center gap-2 text-slate-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-400" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 4v16m8-8H4" />
+                                </svg>
+                                <span class="text-sm font-medium">Upload Images or Open Camera</span>
+                            </div>
+                        </div>
+                        <div class="p-6 border-t border-slate-100 bg-white">
+                            <button type="button" @click="isGalleryModalOpen = false"
+                                class="w-full py-3.5 bg-[#30BE76] hover:opacity-90 text-white font-semibold rounded-xl shadow-lg transition text-center cursor-pointer">
+                                Save Gallery
+                            </button>
                         </div>
                     </div>
                 </div>
-
-                <div class="mt-4 flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-2">
-
-                    <div class="flex flex-col gap-4">
-                        <div class="flex flex-col gap-4">
-                            <img src="assets/Image (7).png" alt="" class="rounded-t-lg">
-                            <h1 class="text-[#030F09] text-[16px] font-semibold">Cooked Coconut Mussels</h1>
-
-                        </div>
-                        <div class="flex flex-row justify-between items-center">
-                            <p class="text-[12px] text-[#767676]">± 5 mins * 4 ingredients </p>
-                            <div
-                                class="flex flex-row items-center border-[#30BE76] border-2 gap-1 px-1 text-[13px] text-[#30BE76] rounded-md">
-                                <img src="assets/Play - Color.png" class="mt-1"><span>cook</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex flex-col gap-4">
-                        <div class="flex flex-col gap-4">
-                            <img src="assets/Image (7).png" alt="" class="rounded-t-lg">
-                            <h1 class="text-[#030F09] text-[16px] font-semibold">Banana and Mandarin Buns</h1>
-
-                        </div>
-                        <div class="flex flex-row justify-between items-center">
-                            <p class="text-[12px] text-[#767676]">± 45 mins * 4 ingredients </p>
-                            <div
-                                class="flex flex-row items-center border-[#30BE76] border-2 gap-1 px-1 text-[13px] text-[#30BE76] rounded-md">
-                                <img src="assets/Play - Color.png" class="mt-1"><span>cook</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex flex-col gap-4">
-                        <div class="flex flex-col gap-4">
-                            <img src="assets/Image (7).png" alt="" class="rounded-t-lg">
-                            <h1 class="text-[#030F09] text-[16px] font-semibold">Cooked Coconut Mussels</h1>
-
-                        </div>
-                        <div class="flex flex-row justify-between items-center">
-                            <p class="text-[12px] text-[#767676]">± 5 mins * 4 ingredients </p>
-                            <div
-                                class="flex flex-row items-center border-[#30BE76] border-2 gap-1 px-1 text-[13px] text-[#30BE76] rounded-md">
-                                <img src="assets/Play - Color.png" class="mt-1"><span>cook</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex flex-col gap-4">
-                        <div class="flex flex-col gap-4">
-                            <img src="assets/Image (7).png" alt="" class="rounded-t-lg">
-                            <h1 class="text-[#030F09] text-[16px] font-semibold">Cooked Coconut Mussels</h1>
-
-                        </div>
-                        <div class="flex flex-row justify-between items-center">
-                            <p class="text-[12px] text-[#767676]">± 5 mins * 4 ingredients </p>
-                            <div
-                                class="flex flex-row items-center border-[#30BE76] border-2 gap-1 px-1 text-[13px] text-[#30BE76] rounded-md">
-                                <img src="assets/Play - Color.png" class="mt-1"><span>cook</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex flex-col gap-4">
-                        <div class="flex flex-col gap-4">
-                            <img src="assets/Image (7).png" alt="" class="rounded-t-lg">
-                            <h1 class="text-[#030F09] text-[16px] font-semibold">Cooked Coconut Mussels</h1>
-
-                        </div>
-                        <div class="flex flex-row justify-between items-center">
-                            <p class="text-[12px] text-[#767676]">± 5 mins * 4 ingredients </p>
-                            <div
-                                class="flex flex-row items-center border-[#30BE76] border-2 gap-1 px-1 text-[13px] text-[#30BE76] rounded-md">
-                                <img src="assets/Play - Color.png" class="mt-1"><span>cook</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex flex-col gap-4">
-                        <div class="flex flex-col gap-4">
-                            <img src="assets/Image (7).png" alt="" class="rounded-t-lg">
-                            <h1 class="text-[#030F09] text-[16px] font-semibold">Cooked Coconut Mussels</h1>
-
-                        </div>
-                        <div class="flex flex-row justify-between items-center">
-                            <p class="text-[12px] text-[#767676]">± 5 mins * 4 ingredients </p>
-                            <div
-                                class="flex flex-row items-center border-[#30BE76] border-2 gap-1 px-1 text-[13px] text-[#30BE76] rounded-md">
-                                <img src="assets/Play - Color.png" class="mt-1"><span>cook</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </article>
-           </div>
+            </div>
         </section>
 
         <footer>

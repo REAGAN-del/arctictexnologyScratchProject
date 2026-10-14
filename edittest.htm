@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Ingredients</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- FontAwesome for Icons (Trash, Edit, Close, Plus) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+    <!-- Modal Container -->
+    <div 
+        x-data="ingredientsManager()" 
+        class="bg-white w-full max-w-md mx-4 p-6 rounded-2xl shadow-xl relative"
+    >
+        <!-- Header -->
+        <div class="flex justify-between items-center mb-6">
+            <h2 class="text-xl font-bold text-gray-900">Edit Ingredients</h2>
+            <button @click="alert('Modal closed')" class="text-gray-400 hover:text-gray-600 transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+        </div>
+
+        <!-- Ingredients List / Inputs -->
+        <div class="space-y-6 mb-8">
+            <template x-for="(ingredient, index) in ingredients" :key="index">
+                <div class="relative pb-2 border-b transition-all" 
+                     :class="editingIndex === index ? 'border-emerald-500' : 'border-gray-200'">
+                    
+                    <!-- Top label / Action icons for active/editing item -->
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="text-xs text-gray-400" x-show="editingIndex === index">Write Ingredient</span>
+                        <div class="flex items-center space-x-3 ml-auto" x-show="editingIndex === index">
+                            <!-- Delete Button -->
+                            <button @click="removeIngredient(index)" class="text-red-400 hover:text-red-600 transition-colors" title="Delete">
+                                <i class="fa-regular fa-trash-can text-sm"></i>
+                            </button>
+                            <!-- Edit/Done Indicator Icon -->
+                            <button class="text-emerald-500" title="Editing">
+                                <i class="fa-solid fa-pen text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Input field when editing, Text display when not -->
+                    <div class="flex items-center justify-between">
+                        <template x-if="editingIndex === index">
+                            <input 
+                                type="text" 
+                                x-model="ingredients[index]" 
+                                @click.away="editingIndex = null"
+                                @keyup.enter="editingIndex = null"
+                                class="w-full text-gray-900 bg-transparent focus:outline-none text-base"
+                                autofocus
+                            >
+                        </template>
+                        <template x-if="editingIndex !== index">
+                            <span 
+                                @click="editingIndex = index" 
+                                class="w-full text-gray-900 text-base cursor-pointer py-1"
+                                x-text="ingredient"
+                            ></span>
+                        </template>
+
+                       
+                        <button 
+                            @click="editingIndex = index" 
+                            class="text-gray-400 hover:text-gray-600 ml-2" 
+                            x-show="editingIndex !== index"
+                        >
+                            <i class="fa-solid fa-pen text-sm"></i>
+                        </button>
+                    </div>
+                </div>
+            </template>
+        </div>
+
+        <!-- Add Ingredient Dashed Box -->
+        <div 
+            @click="addIngredient()"
+            class="border-2 border-dashed border-gray-300 hover:border-emerald-500 rounded-xl p-4 text-center cursor-pointer transition-colors mb-8 group flex items-center justify-center space-x-2 text-gray-400 hover:text-emerald-600"
+        >
+            <i class="fa-solid fa-plus text-sm"></i>
+            <span class="font-normal text-sm">Add Ingredient</span>
+        </div>
+
+        <!-- Save Button -->
+        <button 
+            @click="saveIngredients()"
+            class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-medium py-3 rounded-xl transition-colors shadow-sm"
+        >
+            Save Ingredients
+        </button>
+    </div>
+
+    <!-- Alpine State Management Script -->
+    <script>
+        function ingredientsManager() {
+            return {
+                ingredients: [
+                    '220 CC water',
+                    '1 heap of Ocean Bloom',
+                    '3 batches of Water Cudweed'
+                ],
+                editingIndex: 0, // Starts with the first item selected/active like the screenshot
+                
+                addIngredient() {
+                    this.ingredients.push('');
+                    this.editingIndex = this.ingredients.length - 1;
+                },
+                
+                removeIngredient(index) {
+                    this.ingredients.splice(index, 1);
+                    if (this.editingIndex === index) {
+                        this.editingIndex = null;
+                    }
+                },
+
+                saveIngredients() {
+                    alert('Ingredients saved: ' + JSON.stringify(this.ingredients));
+                }
+            }
+        }
+    </script>
+</body>
+</html>
