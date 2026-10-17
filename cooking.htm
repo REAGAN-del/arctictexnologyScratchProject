@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scratch - My Recipes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+
+    <style type="text/tailwindcss">
+        @layer component {
+            .container {
+                @apply w-full mx-auto px-4 sm:px-10 md:px-20 lg:px-[180px];
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+    <main>
+
+        <!-- Top Fixed Header -->
+        <header
+            class="fixed hidden md:block lg:block top-0 left-0 w-full bg-white z-50 border-b border-[#E5E5E5] lg:bg-white/90 lg:backdrop-blur-sm">
+            <div class="px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between w-full">
+                <a href="onbording.htm">
+                    <div class="flex items-center">
+                        <img src="assets/Logo (1).png" alt="Scratch Logo" class="h-6 w-auto object-contain">
+                    </div>
+                </a>
+
+                <div class="hidden lg:flex items-center gap-2 border-b border-[#A8A8A8] pb-1 w-72">
+                    <img src="assets/Nav 1.png" alt="Search icon" class="w-4 h-4 object-contain">
+                    <input type="text" placeholder="Search recipe, Profile, ingredients"
+                        class="text-xs text-gray-500 bg-transparent outline-none w-full placeholder-gray-400">
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <button aria-label="Notifications" class="focus:outline-none hover:opacity-80 transition-opacity">
+                        <img src="assets/Notifications.png" alt="Notifications" class="w-5 h-5 object-contain">
+                    </button>
+                    <button aria-label="Messages" class="focus:outline-none hover:opacity-80 transition-opacity">
+                        <img src="assets/Messages.png" alt="Messages" class="w-5 h-5 object-contain">
+                    </button>
+                    <img src="assets/Avatar.png" alt="Avatar"
+                        class="hidden md:block w-8 h-8 rounded-full object-cover cursor-pointer">
+                </div>
+            </div>
+
+            <div class="w-full px-4 flex md:hidden items-center gap-3 pb-2 pt-1 border-t border-gray-100">
+                <a href="reciept.htm">
+                    <img src="assets/Avatar.png" alt="Yang Tonghyun" class="w-8 h-8 rounded-full object-cover">
+                </a>
+                <div>
+                    <h4 class="text-xs font-semibold text-[#030F09]">Yang Tonghyun</h4>
+                    <p class="text-[11px] text-[#767676]">2h ago</p>
+                </div>
+            </div>
+        </header>
+        <div class="flex   mx-4 flex-col gap-4 mt-4 md:mt-20">
+            <div class="flex justify-between">
+                <p class="text-[#767676] text-[12px]">&lt; Back to Recipe </p>
+                <div class="flex m gap-2 hidden md:block">
+                    <div class="flex">
+                        <h1 class="text-[16px] font-bold ">Cooking Mode</h1>
+                        <div class="flex ">
+                            <img src="assests2/Timer.png" alt="time" class="w-6 h-6">
+                            <span class="text-[#30BE76] text-[16px] font-semibold">00:12</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-between block md:hidden ">
+                <h1 class="text-[28px] font-bold ">Cooking Mode</h1>
+                <div class="flex mt-2 ">
+                    <img src="assests2/Timer.png" alt="time" class="w-8 h-8">
+                    <span class="text-[#30BE76] text-[20px] font-semibold">00:12</span>
+                </div>
+            </div>
+            <h1 class="text-[24px] text-[#030F09] font-semibold">Almond and Saffron Bonbons</h1>
+            <img src="assests2/Screenshot 2026-10-17 073332.png" alt="video" class="w-30">
+            <div class="flex justify-between">
+                <h1 class="text-[24px] font-bold">Steps</h1>
+                <h1 class="text-[#30BE76] text-[16px]">View ingredients</h1>
+            </div>
+            <div class="flex flex-col gap-4">
+                <div class="flex gap-4">
+                    <img src="assets/Numbering.png" alt="">
+                    <p>Heat a Belgian waffle iron.</p>
+                </div>
+                <div class="flex gap-4">
+                    <img src="assets/Numbering (1).png" alt="" class="w-6 h-6">
+                    <p>Mix the flour, sugar, and baking powder
+                        together in a mixing bowl. Stir in 1 cup
+                        eggnog, butter, and the egg until well
+                        blended. Add more eggnog if needed to make
+                        a pourable batter.</p>
+                </div>
+                <div class="flex gap-4">
+                    <img src="assets/Numbering (2).png" alt="" class="w-6 h-6">
+                    <p>Mix the flour, sugar, and baking powder
+                        together in a mixing bowl. Stir in 1 cup
+                        eggnog, butter, and the egg until well
+                        blended. Add more eggnog if needed to make
+                        a pourable batter.</p>
+                </div>
+                <div class="flex gap-4">
+                    <img src="assets/Numbering (3).png" alt="" class="w-6 h-6">
+                    <p>Mix the flour, sugar, and baking powder
+                        together in a mixing bowl. Stir in 1 cup
+                        eggnog, butter, and the egg until well
+                        blended. Add more eggnog if needed to make
+                        a pourable batter.</p>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+</body>
+
+</html>
